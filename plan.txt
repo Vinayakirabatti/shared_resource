@@ -1,0 +1,66 @@
+User(user_id integer,
+	email_id varchar2(32),
+	Role_Id foriegn key references Roles(Roled_id),
+	password varchar2(16),
+	firstname varchar2(20),
+	lastname varchar2(20),
+	gender char(1),
+	dob date,
+	contact_num numeric(10),
+	address varchar2(50)
+)
+Roles(Role_Id integer,Role_Name varchar2(10))
+
+
+category(cat_id int,cat_name varchar2(10))
+Places(
+ places_id int,
+ title varchar2(40),
+ category foriegn key references category(cat_id),
+ description varchar2(100),
+ place_image blob
+)
+
+
+Package(
+ pack_id int,
+ place_id foriegn key place(place_id),
+ places_to_visit varchar2(30),
+ desc varchar2(100),
+ noofdays int,
+ price int,
+ accomodation bit
+)
+
+PackageBookingDetails(
+ booking_id int,
+ user foriegn key references user(user_id),
+ package foriegn key references package(pack_id),
+ contact_num numeric(10),
+ res_address varchar2(50),
+ date_of_travel date,
+ adults int,
+ children int
+)
+
+AccomdationDetails(
+ id int,
+ booking_id foriegn key references PackageBookingDetails(booking_id),
+ city varchar2(10),
+ room_type char(1),
+ noofrooms int,
+ cost int,
+ paid_status bit
+)
+
+
+Hotel(
+ hotel_id integer,
+ name varchar2(20),
+ rating numeric(1),
+ single_room_price int,
+ double_room_price int,
+ deluxe_room_price int, 
+ suite_room_price int,
+ city varchar2(20)
+)
