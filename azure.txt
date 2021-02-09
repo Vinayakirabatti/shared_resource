@@ -1,0 +1,248 @@
+01. A company uses Azure SQL Database to store data for an app. The data includes sensitive information in a column named CustDetails. You need to implement measures that allow only members of the managers group to see sensitive information.
+Which two actions should you perform?
+Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
+a) Include the managers group
+b) Exclude the managers group
+c) Exclude the administrators group.
+d) Navigate to the following URL:
+
+e) Run the following Azure PowerShell command:
+
+02. You are creating a hazard notification system that has a single signaling server which triggers audio and visual alarms to start and stop. You implement Azure Service Bus to publish alarms. Each alarm controller uses Azure Service Bus to receive alarm signals as part of a transaction.
+Alarm events must be recorded for audit purposes. Each transaction record must include information about the alarm type that was activated. You need to implement a reply trail auditing solution.
+Which two actions should you perform?
+Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
+a) Assign the value of the hazard message SessionID property to the SequenceNumber property.
+b) Assign the value of the hazard message SequenceNumber property to the DeliveryCount property.
+c) Assign the value of the hazard message MessageId property to the DeliveryCount property.
+d) Assign the value of the hazard message SessionID property to the ReplyToSessionld property.
+e) Assign the value of the hazard message MessageId property to the SequenceNumber property.
+f) Assign the value of the hazard message Messageld property to the CorrelationId property.
+ 
+03. You are developing a mobile instant messaging app for a company. The mobile app must meet the following requirements:
+- Support offline data sync.
+- Update the latest messages during normal sync cycles.
+You need to implement Offline Data Sync. Which two actions should you perform?
+Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
+a) Retrieve records from Offline Data Sync on every call to the PullAsync method.
+b) Retrieve records from Offline Data Sync using an Incremental Sync.
+c) Push records to Offline Data Sync using an Incremental Sync.
+d) Return the updatedAt column from the Mobile Service Backend and implement sorting by using the column.
+e) Return the updatedAt column from the Mobile Service Backend and implement sorting by the message id.
+ 
+04. You are developing an internal website for employees to view sensitive data. The website uses Azure Active Directory (AAD) for authentication.
+You need to implement multifactor authentication for the website. What should you do?
+Each correct answer presents part of the solution. NOTE; Each correct selection is worth one point.
+a) In Azure AD, create a new conditional access policy.
+b) In Azure AD, enable application proxy.
+c) Configure the website to use Azure AD B2C.
+d) In Azure AD conditional access, enable the baseline policy.
+e) Upgrade to Azure AD Premium.
+ 
+05. You have the following code (line numbers are included for reference only):
+01 BatchTokenCredentials = GetCredentialsO;
+02 BatchClient client= BatchClient.Open(credentials);
+03 CloudJob job = client.JobOperations.CreateJob():
+04 CloudTask task = new CloudTask("sampleTask", "cmd /c SampleTask.exe"):
+05 job.AddTask(task);
+06 job.Commit();
+You need to ensure that the SampleTask.exe process runs. Which two actions should you perform?
+Each answer presents part of the complete solution.
+a) Remove line 06.
+b) Add the following code between lines 03 and 04: job.Poollnformation.Poolld = pool.ld;
+c) Modify line 05 as follows: client.JobOperations.AddTask("SampleTask", task);
+d) Add the following code between lines 02 and 03: var pool = client.PoolOperations.CreatePool();
+ 
+06. A company is implementing a publish-subscribe (Pub/Sub) messaging component by using Azure Service Bus. You are developing the first subscription application.
+In the Azure portal you see that messages are being sent to the subscription for each topic. You create and initialize a subscription client object by supplying the correct details, but the subscription application is still not consuming the messages.
+You need to complete the source code of the subscription client. What should you do?
+a) await subscription Client.Add Rule Async(ne.v RuleDescription (RuleDescription.DefaultRuleName, new TrueFilter()));
+b) subscriptionClient.RegisterMessageHandler(ProcessMessagesAsync, BiessageHandlerOptions);
+c) subscriptionClient « new SubscriptionClient(ServiceBusConnectionString, TopicName, SubscriptionName);
+d) await subscriptionClient.CloseAsync();
+ 
+07. Which of the following would you use to secure the Shipping Logic App?
+a) Azure App Service Environment
+b) Azure AD B2B integration
+c) Integration Service Environment
+d) VNet service endpoint
+ 
+08. You are developing a .Net Core application that manages images for an advertising company. The images are stored in blob storage with read access geo-zone-redundant storage (RA-GZRS) redundancy to achieve high availability and maximum durability.
+In case of regional outage, the application should be able to read data from secondary storage replication. Secondary storage replication should only be used if primary storage is unavailable.
+You develop the following code to create the object responsible for uploading and reading images from blob storage:
+string storageConnectionString = Environment.GetEnvironmentVariable("storageconnectionstring"): CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageConnectionString); blobClient = storageAccount.CreateCloudBlobClient();
+You need to configure the blob client to meet the high availability requirement. Which location mode option should you use?
+a) blobClient.DefaultRequestOptions.LocationMode = LocationMode.PrimaryThenSecondary
+b) blobClient.DefaultRequestOptions.LocationMode = LocationMode.PrimaryOnly;
+c) blobClient.DefaultRequestOptions.LocationMode = LocationMode.SecondaryThenPrimary;
+d) blobClient.DefaultRequestOptions.LocationMode = LocationMode.SecondaryOnly;
+ 
+09. You are developing a project management service by using ASP.NET. The service hosts conversations, files, to-do lists, and a calendar that users can interact with at any time.
+The application uses Azure Search for allowing users to search for keywords in the project data. You need to implement code that creates the object which is used to create indexes in the Azure Search service.
+Which two objects should you use?
+Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.
+a) SearchService
+b) SearchIndexClient
+c) SearchServiceClient
+d) SearchCredentials
+ 
+10. You are implementing an Azure API app that uses built-in authentication and authorization functionality. All app actions must be associated with information about the current user.
+You need to retrieve the information about the current user. What are two ways to achieve the goal?
+Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.
+a) HTTP headers
+b) environment variables
+c) /.auth/me HTTP endpoint
+d) /.auth/login endpoint
+
+Answers:
+Question: 01
+Answer: d, e	Question: 02
+Answer: a, b	Question: 03
+Answer: b, d	Question: 04
+Answer: a, e	Question: 05
+Answer: a, b
+Question: 06
+Answer: d	Question: 07
+Answer: c	Question: 08
+Answer: a	Question: 09
+Answer: c, d	Question: 10
+Answer: a, c
+
+
+
+
+
+
+
+
+
+
+
+
+
+Topic 1: Develop Azure Infrastructure as a Service Compute Solution
+1.1 Implementing solutions that uses virtual machines (VM)
+
+provisioning VMs (Microsoft Documentation: Create a Windows virtual machine in Azure)
+creating ARM templates (Microsoft Documentation: Create and deploy ARM templates)
+configuring Azure Disk Encryption for VMs (Microsoft Documentation: Azure Disk Encryption)
+1.2 Implementing batch jobs by using Azure Batch Services
+
+managing batch jobs by using Batch Service API (Microsoft Documentation: Azure Batch Service REST API)
+running a batch job by using Azure CLI, Azure portal, and other tools (Microsoft Documentation: Azure portal, Azure CLI)
+writing code to run an Azure Batch Services batch job (Microsoft Documentation: .NET API)
+1.3 Creating containerized solutions
+
+developing an Azure Managed Kubernetes Service (AKS) cluster (Microsoft Documentation: Deploy an Azure Kubernetes Service)
+creating container images for solutions (Microsoft Documentation: Create an Azure Container Registry)
+publishing an image to the Azure Container Registry
+running containers by using Azure Container Instance or AKS (Microsoft Documentation: Run applications in Azure Kubernetes Service)
+Topic 2: Develop Azure Platform as a Service Compute Solution
+2.1 Creating Azure App Service Web Apps
+
+creating an Azure App Service Web App (Microsoft Documentation: Create an ASP.NET Core web app in Azure)
+developing an Azure App Service background task by using WebJobs (Microsoft Documentation: Run background tasks with WebJobs)
+enabling diagnostics logging (Microsoft Documentation: Enable diagnostics logging for apps)
+creating an Azure Web App for Containers (Microsoft Documentation: Deploy a custom Linux container)
+monitoring service health by using Azure Monitor (Microsoft Documentation: Service Health overview)
+2.2 Creating Azure App Service mobile apps
+
+adding push notifications for mobile apps (Microsoft Documentation: Add push notifications)
+enabling offline sync for mobile app (Microsoft Documentation: Enable offline sync)
+implementing a remote instrumentation strategy for mobile devices
+2.3 Creating Azure App Service API apps
+
+developing an Azure App Service API app
+creating documentation for the API by using open source and other tools (Microsoft Documentation: Generate the OpenAPI definition)
+2.4 Implementing Azure functions
+
+implement input and output bindings for a function (Microsoft Documentation: Azure Functions triggers and bindings concepts)
+executing function triggers by using data operations, timers, and webhooks (Microsoft Documentation: Timer trigger for Azure Functions)
+implementing Azure Durable Functions (Microsoft Documentation: Create Durable Functions)
+creating Azure Function apps by using Visual Studio (Microsoft Documentation: Creating the first function in Azure using Visual Studio)
+applying Python Azure Functions (Microsoft Documentation: Python function for Azure Functions)
+Topic 3: Develop for Azure storage
+3.1 Developing solutions that use storage tables
+
+designing and implementing policies for tables (Microsoft Documentation: Define a stored access policy)
+querying table storage by using code (Microsoft Documentation: Query Azure Cosmos DB)
+implementing partitioning schemes (Microsoft Documentation: Partitioning and horizontal scaling in Azure)
+3.2 Developing solutions that use Cosmos DB storage
+
+creating, reading, updating, and deleting data by using appropriate APIs 
+implementing partitioning schemes (Microsoft Documentation: model and partition data on Azure Cosmos DB )
+setting the appropriate consistency level for operations (Microsoft Documentation: consistency level )
+3.3 Developing solutions that use a relational database
+
+provisioning and configuring relational databases (Microsoft Documentation: Create an Azure SQL Database )
+configuring elastic pools for Azure SQL Database (Microsoft Documentation: Creating a new SQL Database elastic pool)
+creating, reading, updating, and deleting data tables by using code (Microsoft Documentation: Use .NET Core (C#) to query a database in Azure SQL Database)
+provisioning and configuring Azure SQL Database serverless instances (Microsoft Documentation: Azure SQL Database serverless)
+configuring Azure SQL and Azure PostgreSQL Hyperscale instances (Microsoft Documentation: Hyperscale service tier)
+3.4 Developing solutions that use blob storage
+
+moving items in Blob storage between storage accounts or containers (Microsoft Documentation: Move Azure storage blobs from the command line)
+setting and retrieving properties and metadata (Microsoft Documentation: Setting properties and metadata)
+implementing blob leasing
+executing data archiving and retention 
+implementing Geo Zone Redundant Storage (Microsoft Documentation: Azure Storage redundancy)
+Topic 4: Implement Azure security
+4.1 Implementing authentication
+
+executing authentication by using certificates, forms-based authentication, or tokens (Microsoft Documentation: Forms Authentication in ASP.NET Web API)
+applying multi-factor or Windows authentication by using Azure AD (Microsoft Documentation: Multi-Factor Authentication, Integrated Windows Authentication)
+implementing OAuth2 authentication (Microsoft Documentation:  Add sign-in to Microsoft)
+applying Managed identities/Service Principal authentication (Microsoft Documentation: Use a Windows VM system-assigned managed identity)
+executing Microsoft identity platform (Microsoft Documentation: Microsoft identity platform (v2.0) overview)
+4.2 Implementing access control
+
+applying CBAC (Claims-Based Access Control) authorization (Microsoft Documentation: Implement Claims Authorization in a Claims-Aware ASP.NET Application)
+implementing RBAC (Role-Based Access Control) authorization 
+creating shared access signatures (Microsoft Documentation: Grant limited access to Azure Storage resources)
+4.3 Implementing secure data solutions
+
+encrypting and decrypting data at rest and in transit
+creating, reading, updating, and deleting keys, secrets, and certificates by using the KeyVault API (Microsoft Documentation: Create Key, Get Key, Delete Key)
+Topic 5: Monitor, troubleshoot, and optimize Azure solutions
+5.1 Developing code to support scalability of apps and services
+
+implementing auto-scaling rules and patterns (scheduling, operational/system metrics, singleton applications) (Microsoft Documentation: Autoscale in Azure)
+executing code that handles transient faults (Microsoft Documentation: Transient Fault Handling)
+implementing AKS scaling strategies (Microsoft Documentation: Scaling options for applications)
+5.2 Integrating caching and content delivery within solutions
+
+storing and retrieving data in Azure Redis cache (Microsoft Documentation: Azure Cache for Redis)
+developing code for implementing CDN in solutions (Microsoft Documentation: Azure CDN development)
+invalidating cache content (CDN or Redis) 
+5.3 Instrumentation 0f solutions to support monitoring and logging
+
+configuring instrumentation in an app or service by using Application Insights (Microsoft Documentation: Start monitoring in the Azure portal)
+analyzing and troubleshooting solutions by using Azure Monitor (Microsoft Documentation: Troubleshooting no data)
+implementing Application Insights Web Test and Alerts 
+Topic 6: Connect to and consume Azure services and third-party services
+6.1 Developing an App Service Logic App
+
+creating a Logic App (Microsoft Documentation: workflow by using Azure Logic Apps)
+develop a custom connector for Logic Apps (Microsoft Documentation: Create a custom connector)
+creating a custom template for Logic Apps (Microsoft Documentation: Azure Resource Manager templates) 
+6.2 Integrating Azure Search within solutions
+
+creating an Azure Search index (Microsoft Documentation: Azure Cognitive Search)
+importing searchable data (Microsoft Documentation:  Import data wizard)
+querying the Azure Search index (Microsoft Documentation: Query types and composition)
+applying cognitive search (Microsoft Documentation: Create an Azure Cognitive Search)
+6.3 Implementing API management
+
+establishing API Gateways (Microsoft Documentation: Provision a self-hosted gateway)
+creating an APIM instance (Microsoft Documentation: Azure API Management service instance)
+configuring authentication for APIs (Microsoft Documentation: secure APIs using client certificate authentication)
+defining policies for APIs
+6.4 Developing event-based solutions
+
+implementing solutions that use Azure Event Grid (Microsoft Documentation: Automate resizing uploaded images)
+executing solutions that use Azure Notification Hubs (Microsoft Documentation: Send notifications to Universal Windows Platform apps)
+implementing solutions that use Azure Event Hub (Microsoft Documentation: Visualize data anomalies in real-time)
+6.5 Developing message-based solutions
+
+applying solutions that use Azure Service Bus (Microsoft Documentation: Update inventory using PowerShell)
+implementing solutions that use Azure Queue Storage queues (Microsoft Documentation: Work with Azure storage queues in .NET)
